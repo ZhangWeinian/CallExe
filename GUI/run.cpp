@@ -1,29 +1,29 @@
+#pragma once
+
 #include <cstdlib>
 #include <cstring>
 #include <string>
-
-#include <sal.h>
 #include <Windows.h>
 
 static inline int CallEXE(const wchar_t* exePath, LPTSTR cmdLineArgs)
 {
-	STARTUPINFO			si;			 // 用于存储启动信息的结构体
-	PROCESS_INFORMATION pi;			 // 用于存储进程信息的结构体
+	STARTUPINFO			si;			// 用于存储启动信息的结构体
+	PROCESS_INFORMATION pi;			// 用于存储进程信息的结构体
 
-	ZeroMemory(&si, sizeof(si));	 // 清空 STARTUPINFO 结构体
-	si.cb = sizeof(si);				 // 设置 STARTUPINFO 结构体的大小
-	ZeroMemory(&pi, sizeof(pi));	 // 清空 PROCESS_INFORMATION 结构体
+	ZeroMemory(&si, sizeof(si));	// 清空 STARTUPINFO 结构体
+	si.cb = sizeof(si);				// 设置 STARTUPINFO 结构体的大小
+	ZeroMemory(&pi, sizeof(pi));	// 清空 PROCESS_INFORMATION 结构体
 
-	if (!CreateProcess(exePath,		 // 应用程序名称
-					   cmdLineArgs,	 // 命令行参数
-					   nullptr,		 // 进程句柄不可继承
-					   nullptr,		 // 线程句柄不可继承
-					   FALSE,		 // 禁止句柄继承
-					   0,			 // 无创建标志
-					   nullptr,		 // 使用父进程环境块
-					   nullptr,		 // 使用父进程的工作目录
-					   &si,			 // 指向 STARTUPINFO 结构体的指针
-					   &pi			 // 指向 PROCESS_INFORMATION 结构体的指针
+	if (!CreateProcess(exePath,		// 应用程序名称
+					   cmdLineArgs, // 命令行参数
+					   nullptr,		// 进程句柄不可继承
+					   nullptr,		// 线程句柄不可继承
+					   FALSE,		// 禁止句柄继承
+					   0,			// 无创建标志
+					   nullptr,		// 使用父进程环境块
+					   nullptr,		// 使用父进程的工作目录
+					   &si,			// 指向 STARTUPINFO 结构体的指针
+					   &pi			// 指向 PROCESS_INFORMATION 结构体的指针
 					   ))
 	{
 		return EXIT_FAILURE;
@@ -39,10 +39,10 @@ static inline int CallEXE(const wchar_t* exePath, LPTSTR cmdLineArgs)
 	return EXIT_SUCCESS;
 }
 
-int WINAPI WinMain(_In_ HINSTANCE	  hInstance,	  // 当前实例的句柄
-				   _In_opt_ HINSTANCE hPrevInstance,  // 上一实例的句柄
-				   _In_ LPSTR		  lpCmdLine,	  // 命令行
-				   _In_ int			  nCmdShow		  // 显示状态
+int WINAPI WinMain(_In_ HINSTANCE	  hInstance,	 // 当前实例的句柄
+				   _In_opt_ HINSTANCE hPrevInstance, // 上一实例的句柄
+				   _In_ LPSTR		  lpCmdLine,	 // 命令行
+				   _In_ int			  nCmdShow		 // 显示状态
 )
 {
 	using namespace std;
@@ -50,7 +50,7 @@ int WINAPI WinMain(_In_ HINSTANCE	  hInstance,	  // 当前实例的句柄
 	string	commandArgs(lpCmdLine);
 	wstring wCommandArgs(commandArgs.begin(), commandArgs.end());
 
-	wCommandArgs = LR"("C:\Windows\regedit.exe" )" + wCommandArgs;
+	wCommandArgs = LR"("E:\Software\Steam++\Steam++.exe" )" + wCommandArgs;
 
 	/*
 	* 关于 pwCommandArgs 数组大小的说明：

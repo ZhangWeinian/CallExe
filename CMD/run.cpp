@@ -1,3 +1,5 @@
+#pragma once
+
 #include <cstdlib>
 #include <string>
 
@@ -5,7 +7,7 @@ int main(int argc, char* argv[])
 {
 	using namespace ::std;
 
-	string commandLine { R"("E:\Project\Git\bin\git.exe")" };
+	string commandLine { R"("E:\Software\Steam++\Steam++.exe")" };
 
 	for (int i = 1; i < argc; ++i)
 	{
@@ -13,7 +15,7 @@ int main(int argc, char* argv[])
 		commandLine += argv[i];
 	}
 
-	system(commandLine.data());
+	::system(commandLine.data());
 
 	return EXIT_SUCCESS;
 }
