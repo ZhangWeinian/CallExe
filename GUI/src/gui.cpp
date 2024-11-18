@@ -49,8 +49,9 @@ int WINAPI WinMain(_In_ HINSTANCE	  hInstance,	 // 当前实例的句柄
 
 	string	commandArgs(lpCmdLine);
 	wstring wCommandArgs(commandArgs.begin(), commandArgs.end());
+	wCommandArgs = LR"( )" + wCommandArgs;
 
-	wCommandArgs = LR"("D:\Software\Everything\Everything.exe" )" + wCommandArgs;
+	wCommandArgs = LR"("D:\Program Files (local)\Registry Finder\RegistryFinder.exe")" + wCommandArgs;
 
 	/*
 	* 关于 pwCommandArgs 数组大小的说明：

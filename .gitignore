@@ -365,3 +365,5 @@ FodyWeavers.xsd
 /TongDaXin/PluginFunc/.clang-format
 /CallExe/.clang-format
 /.clang-format
+/CLI/.clang-format
+/GUI/.clang-format

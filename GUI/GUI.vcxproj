@@ -72,23 +72,23 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <OutDir>build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>work\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>build\$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>work\$(PlatformShortName)_$(Configuration)\</IntDir>
     <TargetName>gui</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
-    <OutDir>build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>work\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>build\$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>work\$(PlatformShortName)_$(Configuration)\</IntDir>
     <TargetName>gui</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <OutDir>build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>work\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>build\$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>work\$(PlatformShortName)_$(Configuration)\</IntDir>
     <TargetName>gui</TargetName>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <OutDir>build\$(Platform)\$(Configuration)\</OutDir>
-    <IntDir>work\$(Platform)\$(Configuration)\</IntDir>
+    <OutDir>build\$(PlatformShortName)_$(Configuration)\</OutDir>
+    <IntDir>work\$(PlatformShortName)_$(Configuration)\</IntDir>
     <TargetName>gui</TargetName>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
@@ -160,7 +160,10 @@
     </Bscmake>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="gui.cpp" />
+    <ClCompile Include="src\gui.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include=".clang-format" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

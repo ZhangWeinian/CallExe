@@ -7,7 +7,7 @@ int main(int argc, char* argv[])
 {
 	using namespace ::std;
 
-	string commandLine { R"("E:\Project\TexLive\2024\bin\windows\xindex.exe")" };
+	string commandLine { R"("D:\Program Files (local)\N_m3u8DL-RE\N_m3u8DL-RE.exe")" };
 
 	for (int i = 1; i < argc; ++i)
 	{
